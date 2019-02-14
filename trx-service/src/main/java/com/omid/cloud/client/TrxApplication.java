@@ -60,22 +60,22 @@ class ClientApi
     @GetMapping("/merge")
     String getApi()
     {
-        TxSupport txn = new TxSupport(coordinatorUrl);
+//        TxSupport txn = new TxSupport(coordinatorUrl);
+//
+//        // start a transaction
+//        txn.startTx();
+//
+//        // verify that there is an active transaction
+//        if (!txn.txStatus().equals(TxStatusMediaType.TX_ACTIVE))
+//            throw new RuntimeException("A transaction should be active: " + txn.txStatus());
 
-        // start a transaction
-        txn.startTx();
-
-        // verify that there is an active transaction
-        if (!txn.txStatus().equals(TxStatusMediaType.TX_ACTIVE))
-            throw new RuntimeException("A transaction should be active: " + txn.txStatus());
-
-        System.out.println("transaction running: " + txn.txStatus());
+//        System.out.println("transaction running: " + txn.txStatus());
         String forObject2 = restTemplate.getForObject("http://localhost:8686/account", String.class);
         System.out.println(forObject2);
         String forObject = restTemplate.getForObject("http://localhost:8585/pay", String.class);
         System.out.println(forObject);
      // end the transaction
-        txn.commitTx();
+//        txn.commitTx();
         return "merge";
     }
 

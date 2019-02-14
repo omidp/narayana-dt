@@ -23,6 +23,11 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -54,28 +59,21 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-		
-		
+
+
 		<!-- Narayana dependencies -->
 		<dependency>
-            <groupId>org.jboss.narayana.jta</groupId>
-            <artifactId>jta</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.narayana.jts</groupId>
-            <artifactId>narayana-jts-integration</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss</groupId>
-            <artifactId>jboss-transaction-spi</artifactId>
-            <version>${version.org.jboss.jboss-transaction-spi}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jboss.logging</groupId>
-                    <artifactId>jboss-logging-spi</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>artemis-jms-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-artemis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jta-narayana</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
@@ -90,10 +88,10 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 		</dependency>
-        
-        
-        
-		
+
+
+
+
 
 
 	</dependencies>
@@ -108,25 +106,25 @@
 				<scope>import</scope>
 			</dependency>
 			<dependency>
-              <groupId>org.jboss.narayana.jta</groupId>
-              <artifactId>jdbc</artifactId>
-              <version>${version.narayana}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.jboss.narayana.jta</groupId>
-              <artifactId>jms</artifactId>
-              <version>${version.narayana}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.jboss.narayana.jta</groupId>
-              <artifactId>jta</artifactId>
-              <version>${version.narayana}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.jboss.narayana.jts</groupId>
-              <artifactId>narayana-jts-integration</artifactId>
-              <version>${version.narayana}</version>
-            </dependency>
+				<groupId>org.jboss.narayana.jta</groupId>
+				<artifactId>jdbc</artifactId>
+				<version>${version.narayana}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.narayana.jta</groupId>
+				<artifactId>jms</artifactId>
+				<version>${version.narayana}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.narayana.jta</groupId>
+				<artifactId>jta</artifactId>
+				<version>${version.narayana}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.narayana.jts</groupId>
+				<artifactId>narayana-jts-integration</artifactId>
+				<version>${version.narayana}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
